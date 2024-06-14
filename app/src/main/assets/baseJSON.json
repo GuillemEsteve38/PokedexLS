@@ -1,0 +1,33 @@
+{
+  "name": "Ash",
+  "money": 1000,
+  "pokeballs": [
+    {
+      "type": "PokeBall",
+      "quantity": 5,
+      "multiplier": 1,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+    },
+    {
+      "type": "GreatBall",
+      "quantity": 0,
+      "multiplier": 1.5,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png"
+    },
+    {
+      "type": "Ultraball",
+      "quantity": 0,
+      "multiplier": 2,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png"
+    },
+    {
+      "type": "Masterball",
+      "quantity": 0,
+      "multiplier": 0,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png"
+    }
+  ],
+  "pokemons": [
+
+  ]
+}

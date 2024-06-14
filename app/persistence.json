@@ -1,0 +1,38 @@
+{
+  "name": "Ash",
+  "money": 1000,
+  "pokeballs": [
+    {
+      "type": "PokeBall",
+      "quantity": 10,
+      "multiplier": 1,
+      "imageResource": ""
+    },
+    {
+      "type": "GreatBall",
+      "quantity": 3,
+      "multiplier": 1.5,
+      "imageResource": ""
+    },
+    {
+      "type": "Ultraball",
+      "quantity": 5,
+      "multiplier": 2,
+      "imageResource": ""
+    },
+    {
+      "type": "Masterball",
+      "quantity": 1,
+      "multiplier": 0,
+      "imageResource": ""
+    }
+  ],
+  "pokemons": [
+    {
+      "name": "Pikachu"
+    },
+    {
+      "name": "Charizard"
+    }
+  ]
+}

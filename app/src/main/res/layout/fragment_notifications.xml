@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="top|center_horizontal">
+
+    <!-- Pokeball Item -->
+    <LinearLayout
+        android:id="@+id/ly_pokeballN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@android:color/holo_red_light"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/pokeballImage"
+                android:layout_width="99dp"
+                android:layout_height="67dp"
+                android:src="@drawable/pokeball" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/dollar" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Superball Item -->
+    <LinearLayout
+        android:id="@+id/ly_superball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@android:color/holo_red_light"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/superballImage"
+                android:layout_width="98dp"
+                android:layout_height="67dp"
+                android:src="@drawable/superball" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/dollar" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Ultraball Item -->
+    <LinearLayout
+        android:id="@+id/ly_ultraball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@android:color/holo_red_light"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/ultraballImage"
+                android:layout_width="99dp"
+                android:layout_height="67dp"
+                android:src="@drawable/ultraball" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1500"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/dollar" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Masterball Item -->
+    <LinearLayout
+        android:id="@+id/ly_masterball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@android:color/holo_red_light"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/masterballImage"
+                android:layout_width="99dp"
+                android:layout_height="67dp"
+                android:src="@drawable/masterball" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100,000"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/dollar" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
