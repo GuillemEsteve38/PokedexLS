@@ -1,12 +1,14 @@
 package com.example.pokedexls;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,6 +39,8 @@ public class PokemonDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_detail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Pokemon Detail");
         int  a = getIntent().getIntExtra("id",1);
         tvName = findViewById(R.id.tvName);
         tvType = findViewById(R.id.tvType);
@@ -49,8 +53,15 @@ public class PokemonDetailActivity extends AppCompatActivity {
         ivtype2 = findViewById(R.id.ivtype2);
 
         Random rnd = new Random();
-        int ran = rnd.nextInt(2);
-        tvAbility.setText(PokemonLab.getsCrimeLab().getChat(a).getAbilities().get(ran).getName());
+        if (PokemonLab.getsCrimeLab().getChat(a).getAbilities().size() >= 2){
+            int ran = rnd.nextInt(2);
+            tvAbility.setText(PokemonLab.getsCrimeLab().getChat(a).getAbilities().get(ran).getName());
+
+        }else{
+            tvAbility.setText(PokemonLab.getsCrimeLab().getChat(a).getAbilities().get(0).getName());
+
+        }
+
 
         pbar1 = findViewById(R.id.pbar1);
         pbar2 = findViewById(R.id.pbar2);
@@ -194,5 +205,16 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
         }
         return img;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                PokemonLab.clearList();
+                PokemonLab.getsCrimeLab().clearOffset();
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -32,6 +34,8 @@ public class CaptureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Capture");
         viewPager = findViewById(R.id.viewPager);
         pokemonid = getIntent().getIntExtra("id",1);
 
@@ -77,7 +81,6 @@ public class CaptureActivity extends AppCompatActivity {
                     float res = 0;
                     int money =0;
                     int perc = rnd.nextInt(101) + 1;
-                    pokeball.setQuantity(pokeball.getQuantity()-1);
                     holder.pokeballQuantity.setText("X" + String.valueOf(pokeball.getQuantity()));
 
                         switch (PokemonLab.getsCrimeLab().getChat(pokemonid).getEvolution()){
@@ -128,21 +131,27 @@ public class CaptureActivity extends AppCompatActivity {
                         }
 
 
-
-                    if (perc <= res*100){
-                        try {
-                            User.setMoney(User.getMoney()+money);
-                            PokemonLab.getsCrimeLab().getChat(pokemonid).setPokeball(pokeball.getType());
-                            User.getPokemons().add(PokemonLab.getsCrimeLab().getChat(pokemonid));
-                            User.saveUserData(CaptureActivity.this,CaptureActivity.this.openFileInput("persistence.json"));
-                        } catch (FileNotFoundException e) {
-                            throw new RuntimeException(e);
+                        if (pokeball.getQuantity() > 0) {
+                            if (perc <= res * 100) {
+                                try {
+                                    User.setMoney(User.getMoney() + money);
+                                    PokemonLab.getsCrimeLab().getChat(pokemonid).setPokeball(pokeball.getType());
+                                    User.getPokemons().add(PokemonLab.getsCrimeLab().getChat(pokemonid));
+                                    User.saveUserData(CaptureActivity.this, CaptureActivity.this.openFileInput("persistence.json"));
+                                } catch (FileNotFoundException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                Toast.makeText(CaptureActivity.this, "Captured", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CaptureActivity.this, "You earned " + money + "$", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(CaptureActivity.this, MainActivity.class);
+                                PokemonLab.clearList();
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(CaptureActivity.this, "Missed", Toast.LENGTH_SHORT).show();
+                            }
+                        }else {
+                            Toast.makeText(CaptureActivity.this, "You not have any pokeball of this type", Toast.LENGTH_SHORT).show();
                         }
-                        Toast.makeText(CaptureActivity.this,"Captured",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(CaptureActivity.this,"You earned "+money+"$",Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(CaptureActivity.this,"Missed",Toast.LENGTH_SHORT).show();
-                    }
 
 
                 }
@@ -200,5 +209,15 @@ public class CaptureActivity extends AppCompatActivity {
 
         return first +"\n"+sec+"\n"+third+"\n"+fort;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -284,6 +284,7 @@ public class PokemonLab{
         offset = 0;
     }
     public static void clearList(){
+        offset = 0;
         mCrimes.clear();
     }
     public interface DataCallback {
