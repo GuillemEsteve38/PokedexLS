@@ -196,15 +196,39 @@ public class CaptureActivity extends AppCompatActivity {
         int prob = 0;
         float res1 =  (float) (600 - 20) /600*pokeball.getMultiplier();
         float res2 =  (float) (600 - 80) /600*pokeball.getMultiplier();
+        if (res1 > 1){
+            res1 = 1;
+        }
+        if (res2 > 1){
+            res2 = 1;
+        }
         String first = (int)(res1*100)+"% - "+ String.valueOf((int)(res2*100))+"%";
         float res3 =  (float) (600 - 80) /600*pokeball.getMultiplier();
         float res4 =  (float) (600 - 200) /600*pokeball.getMultiplier();
+        if (res3 > 1){
+            res3 = 1;
+        }
+        if (res4 > 1){
+            res4 = 1;
+        }
         String sec = String.valueOf((int)(res3*100))+"% - "+ String.valueOf((int)(res4*100))+"%";
         float res5 =  (float) (600 - 200) /600*pokeball.getMultiplier();
         float res6 =  (float) (600 - 350) /600*pokeball.getMultiplier();
+        if (res5 > 1){
+            res5 = 1;
+        }
+        if (res6 > 1){
+            res6 = 1;
+        }
         String third = String.valueOf((int)(res5*100))+"% - "+ String.valueOf((int)(res6*100))+"%";
         float res7 =  (float) (600 - 350) /600*pokeball.getMultiplier();
         float res8 =  (float) (600 - 500) /600*pokeball.getMultiplier();
+        if (res7 > 1){
+            res7 = 1;
+        }
+        if (res8 > 1){
+            res8 = 1;
+        }
         String fort = String.valueOf((int)(res7*100))+"% - "+ String.valueOf((int)(res8*100))+"%";
 
         return first +"\n"+sec+"\n"+third+"\n"+fort;

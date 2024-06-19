@@ -3,9 +3,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/fondo"
     android:gravity="top|center_horizontal">
 
-    <!-- Pokeball Item -->
+
     <LinearLayout
         android:id="@+id/ly_pokeballN"
         android:layout_width="wrap_content"
@@ -53,7 +54,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Superball Item -->
     <LinearLayout
         android:id="@+id/ly_superball"
         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Ultraball Item -->
+
     <LinearLayout
         android:id="@+id/ly_ultraball"
         android:layout_width="wrap_content"
@@ -149,7 +149,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Masterball Item -->
+
     <LinearLayout
         android:id="@+id/ly_masterball"
         android:layout_width="wrap_content"
